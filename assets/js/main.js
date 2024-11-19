@@ -2,6 +2,46 @@
 // Scaling factor for dice size
 let scaleFactor = 3; // 3 = 300% larger
 
+// Function to calculate positions for dots with spacing
+function calculateDotPositions(size, margin) {
+    const mid = size / 2;
+    const positions = {
+      1: [[mid, mid]],
+      2: [
+        [margin, margin],
+        [size - margin, size - margin],
+      ],
+      3: [
+        [margin, margin],
+        [mid, mid],
+        [size - margin, size - margin],
+      ],
+      4: [
+        [margin, margin],
+        [margin, size - margin],
+        [size - margin, margin],
+        [size - margin, size - margin],
+      ],
+      5: [
+        [margin, margin],
+        [margin, size - margin],
+        [mid, mid],
+        [size - margin, margin],
+        [size - margin, size - margin],
+      ],
+      6: [
+        [margin, margin],
+        [margin, mid],
+        [margin, size - margin],
+        [size - margin, margin],
+        [size - margin, mid],
+        [size - margin, size - margin],
+      ],
+    };
+  
+    return  positions ;
+  }
+
 // Function to set up the SVG viewbox, dimensions, and create a border
 function setupSvgElement(svgElement, size) {
   // Set the SVG viewbox and dimensions
@@ -37,41 +77,9 @@ function createDiceFace(svgElement, value) {
 
   if (value === 0) return; // Skip creating dots for "no dots" (die fell off)
 
-  // Calculate positions for dots with spacing
-  const mid = size / 2;
-  const positions = {
-    1: [[mid, mid]],
-    2: [
-      [margin, margin],
-      [size - margin, size - margin],
-    ],
-    3: [
-      [margin, margin],
-      [mid, mid],
-      [size - margin, size - margin],
-    ],
-    4: [
-      [margin, margin],
-      [margin, size - margin],
-      [size - margin, margin],
-      [size - margin, size - margin],
-    ],
-    5: [
-      [margin, margin],
-      [margin, size - margin],
-      [mid, mid],
-      [size - margin, margin],
-      [size - margin, size - margin],
-    ],
-    6: [
-      [margin, margin],
-      [margin, mid],
-      [margin, size - margin],
-      [size - margin, margin],
-      [size - margin, mid],
-      [size - margin, size - margin],
-    ],
-  };
+   // Calculate dot positions based on the size and margin
+
+  const positions  = calculateDotPositions(size, margin);
 
   // Create dots for the dice face
   positions[value].forEach(([cx, cy]) => {
@@ -122,8 +130,8 @@ function rollDice() {
     return;
   }
 
-  // Alternate dice faces for 2-6 seconds
-  const randomDuration = Math.random() * (6000 - 2000) + 2000;
+  // Alternate dice faces for 2-4 seconds
+  const randomDuration = Math.random() * (4000 - 2000) + 2000;
 
   const interval = setInterval(() => {
     createDiceFace(dice1, Math.ceil(Math.random() * 6));
