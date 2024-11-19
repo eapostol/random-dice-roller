@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dice Roll Simulation</title>
+  <!-- Link to external CSS -->
   <link rel="stylesheet" href="./assets/css/main.css">
-
 </head>
 <body>
 
@@ -15,6 +15,16 @@
 </div>
 <button id="roll-button">Roll Dice</button>
 <div id="total"></div>
+
+<!-- Alert Modal -->
+<div id="alert-modal" class="modal hidden">
+  <div class="modal-content">
+    <p>Oops, one of the two dice fell off the table, leaving a value of 1 for the total!</p>
+    <button id="close-modal">Close</button>
+  </div>
+</div>
+
+<!-- Link to external JavaScript -->
 <script src="./assets/js/main.js"></script>
 </body>
 </html>
