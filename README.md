@@ -1,12 +1,13 @@
-# Dice Rolling Application
+# Enhanced Dice Rolling Application
 
-This is a simple Dice Rolling Application built using HTML, CSS, and JavaScript. The application allows users to roll a virtual dice and get a random number between 1 and 6 for each die.
+This is an enhanced Dice Rolling Application built using HTML, CSS, and JavaScript. The application allows users to roll a virtual dice and get a random number between 1 and 6 for each die. Additionally, it now supports rolling a value of 1 and includes scalable dice.
 
 ## Features
 
-- Roll a dice to get a random number between 1 and 6.
+- Roll a dice to get a random number between 1 and 6, including 1.
 - Simple and intuitive user interface.
 - Responsive design that works on both desktop and mobile devices.
+- Scalable dice that can adjust in size.
 
 ## Usage
 
@@ -22,8 +23,10 @@ This is a simple Dice Rolling Application built using HTML, CSS, and JavaScript.
 
 ## How It Works
 
-The application uses JavaScript to generate a random number between 1 and 6 when the "Roll Dice" button is clicked. The result is then displayed on the screen.
+The application uses JavaScript to generate a random number between 1 and 6, including 1, when the "Roll Dice" button is clicked. The result is then displayed on the screen. The code has been refactored for better performance and readability. The dice can also scale in size based on user interaction.
 
 ## License
 
-This project is licensed under the MIT License. See the `LICENSE` file for more details.
+This project is licensed under the MIT License. See the `LICENSE` file for more details. Dice Rolling Application
+
+This is a simple Dice Rolling Application built using HTML, CSS, and JavaScript. The application allows users to roll a virtual dice and get a random number between 1 and 6 for each die.
